@@ -6,12 +6,12 @@ import { DashboardContainer } from './styles';
 const Dashboard: React.FC = () => {
   return (
     <DashboardContainer>
-      <h1>EZW APP</h1>
+      <h1>TodosTest</h1>
 
-      <Link to="/todos" />
-      <Link to="/users" />
-
-      <button></button>
+      <nav>
+        <Link to="/todos"> todos </Link>
+        <Link to="/users"> usuários </Link>
+      </nav>
     </DashboardContainer>
   );
 };

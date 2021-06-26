@@ -11,13 +11,13 @@ export default createGlobalStyle`
   
   body {
     -webkit-font-smoothing: antialiased;
-    background: #e5e5e5;
+    background: #0f0f0f;
+    color: #f5f5f5;
   }
 
   #root {
-    max-width: 960px;
+    width: 100vw;
     margin: 0 auto;
-    padding: 40px 20px;
   }
   
   button {
