@@ -16,7 +16,7 @@ export default createGlobalStyle`
   }
 
   #root {
-    width: 100vw;
+    max-width: 100vw;
     margin: 0 auto;
   }
   

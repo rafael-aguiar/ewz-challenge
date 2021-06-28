@@ -1,7 +1,13 @@
 import React from 'react';
 
+import Dashboard from '../../components/Dashboard';
+
 const Users: React.FC = () => {
-  return <div />;
+  return (
+    <>
+      <Dashboard />
+    </>
+  );
 };
 
 export default Users;

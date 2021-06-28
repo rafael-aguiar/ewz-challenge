@@ -7,8 +7,7 @@ const Routes: React.FC = () => {
     <Switch>
       <Redirect exact from="/" to="/todos" />
       <Route path="/todos" component={Todos} />
-      <Route path="/users" component={Users} />
-      <Route />
+      <Route path="/users" component={Users} />-
     </Switch>
   );
 };
