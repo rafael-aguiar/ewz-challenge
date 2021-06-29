@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
   * {
@@ -8,18 +8,20 @@ export default createGlobalStyle`
     box-sizing: border-box;
     font-family: 'roboto', sans-serif
   }
-  
+
   body {
     -webkit-font-smoothing: antialiased;
     background: #0f0f0f;
     color: #f5f5f5;
+    max-width: 100vw;
   }
 
   #root {
     max-width: 100vw;
     margin: 0 auto;
+
   }
-  
+
   button {
     cursor: pointer;
   }

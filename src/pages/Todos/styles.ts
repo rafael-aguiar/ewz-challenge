@@ -1,4 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+
+type CardProps = {
+  completed: boolean;
+};
 
 export const TodosContainer = styled.div`
   max-width: 100%;
@@ -7,6 +11,11 @@ export const TodosContainer = styled.div`
   h1 {
     font-size: 24px;
     font-weight: 500;
+
+    @media (max-width: 800px) {
+      font-size: 36px;
+      text-align: center;
+    }
   }
 
   main {
@@ -15,19 +24,24 @@ export const TodosContainer = styled.div`
     flex-wrap: wrap;
 
     justify-content: flex-start;
+
+    @media (max-width: 800px) {
+      align-items: center;
+      justify-content: center;
+    }
   }
 `;
 
-export const TodoCard = styled.div`
+export const TodoCard = styled.div<CardProps>`
   background: #242424;
   border-radius: 5px;
-  height: 100px;
+  height: 200px;
   max-width: 20%;
   padding: 20px;
   margin: 0 25px 25px 0;
 
   display: flex;
-  flex: 1 1 20%;
+  flex: 1 0 20%;
   flex-direction: column;
   align-content: flex-start;
   justify-content: space-evenly;
@@ -40,17 +54,34 @@ export const TodoCard = styled.div`
 
   span:first-of-type {
     &::before {
-      content: '';
+      content: "";
 
       display: block;
       position: relative;
 
       height: 5px;
       width: 50px;
-      background: #17b978;
+      background: #${(props) => (props.completed ? "17b978" : "3D6CB9")};
       border-radius: 10px;
 
       margin-bottom: 12px;
+
+      @media (max-width: 1200px) {
+        margin-bottom: 20px;
+      }
     }
+  }
+
+  @media (max-width: 1200px) {
+    height: 200px;
+    max-width: 25%;
+    flex-basis: 25%;
+    margin: 10px auto;
+  }
+
+  @media (max-width: 1200px) {
+    height: 200px;
+    max-width: 100%;
+    flex-basis: 100%;
   }
 `;

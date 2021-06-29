@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-import Dashboard from '../../components/Dashboard';
+import Dashboard from "../../components/Dashboard";
 
-import { TodosContainer, TodoCard } from './styles';
+import { TodosContainer, TodoCard } from "./styles";
 
-import api from '../../services/api';
+import api from "../../services/api";
 
 interface ITodo {
   userId: number;
@@ -23,8 +23,8 @@ const Todo: React.FC = () => {
   const [users, setUsers] = useState<IUser[] | null>(null);
 
   useEffect(() => {
-    api.get('/todos').then(response => setTodos(response.data));
-    api.get('/users').then(response => setUsers(response.data));
+    api.get("/todos").then((response) => setTodos(response.data.slice(0, 15)));
+    api.get("/users").then((response) => setUsers(response.data));
   }, []);
 
   return (
@@ -35,8 +35,8 @@ const Todo: React.FC = () => {
         <main>
           {todos &&
             users &&
-            todos.slice(0, 15).map(todo => (
-              <TodoCard key={todo.id}>
+            todos.map((todo) => (
+              <TodoCard key={todo.id} completed={todo.completed}>
                 <span>
                   <strong>Título:</strong> {todo.title}
                 </span>
