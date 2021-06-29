@@ -7,9 +7,9 @@ Desafio Front-end EZW Capital
 ## Techs
 
 - [x] React.js
-- [x] Styled Components
 - [x] TypeScript
-
+- [x] Styled Components
+- [x] Axios 
 
 ## Como rodar o projeto
 1. Clone o repositório (git clone https://github.com/rafael-aguiar/ewz-challenge.git)
