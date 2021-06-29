@@ -36,12 +36,12 @@ export const TodoCard = styled.div<CardProps>`
   background: #242424;
   border-radius: 5px;
   height: 200px;
-  max-width: 20%;
+  max-width: 22%;
   padding: 20px;
   margin: 0 25px 25px 0;
 
   display: flex;
-  flex: 1 0 20%;
+  flex: 1 0 22%;
   flex-direction: column;
   align-content: flex-start;
   justify-content: space-evenly;

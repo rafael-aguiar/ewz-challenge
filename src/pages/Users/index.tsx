@@ -1,7 +1,5 @@
 import React, { useState, useEffect, MouseEvent } from "react";
 
-import Dashboard from "../../components/Dashboard";
-
 import api from "../../services/api";
 
 import { UsersContainer, UserCard } from "./styles";
@@ -26,45 +24,42 @@ const Users: React.FC = () => {
     api.get("/users").then((response) => setUsers(response.data));
   }, []);
   return (
-    <>
-      <Dashboard />
-      <UsersContainer>
-        <h1>Usuários</h1>
-        <main>
-          {users &&
-            users.map((user) => (
-              <UserCard>
-                <section>
-                  <div className="image"></div>
-                  <div>
-                    <span>{user.name}</span>
-                    <span>{user.site}</span>
-                  </div>
-                </section>
-                <span>
-                  <strong>E-mail: </strong>
-                  {user.email}
-                </span>
-                <span>
-                  <strong>Telefone: </strong>
-                  {user.phone}
-                </span>
-                <span>
-                  <strong>Rua: </strong>
-                  {user.address.street}
-                </span>
-                <span>
-                  <strong>Cidade:</strong>
-                  {user.address.city}
-                </span>
-                <button onClick={(event: MouseEvent) => event.preventDefault()}>
-                  Ver mais
-                </button>
-              </UserCard>
-            ))}
-        </main>
-      </UsersContainer>
-    </>
+    <UsersContainer>
+      <h1>Usuários</h1>
+      <main>
+        {users &&
+          users.map((user) => (
+            <UserCard>
+              <section>
+                <div className="image"></div>
+                <div>
+                  <span>{user.name}</span>
+                  <span>{user.site}</span>
+                </div>
+              </section>
+              <span>
+                <strong>E-mail: </strong>
+                {user.email}
+              </span>
+              <span>
+                <strong>Telefone: </strong>
+                {user.phone}
+              </span>
+              <span>
+                <strong>Rua: </strong>
+                {user.address.street}
+              </span>
+              <span>
+                <strong>Cidade:</strong>
+                {user.address.city}
+              </span>
+              <button onClick={(event: MouseEvent) => event.preventDefault()}>
+                Ver mais
+              </button>
+            </UserCard>
+          ))}
+      </main>
+    </UsersContainer>
   );
 };
 

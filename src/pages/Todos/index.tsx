@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 
-import Dashboard from "../../components/Dashboard";
-
 import { TodosContainer, TodoCard } from "./styles";
 
 import api from "../../services/api";
@@ -28,26 +26,23 @@ const Todo: React.FC = () => {
   }, []);
 
   return (
-    <>
-      <Dashboard />
-      <TodosContainer>
-        <h1>Todos os todos</h1>
-        <main>
-          {todos &&
-            users &&
-            todos.map((todo) => (
-              <TodoCard key={todo.id} completed={todo.completed}>
-                <span>
-                  <strong>Título:</strong> {todo.title}
-                </span>
-                <span>
-                  <strong>Responsável:</strong> {users[todo.userId].name}
-                </span>
-              </TodoCard>
-            ))}
-        </main>
-      </TodosContainer>
-    </>
+    <TodosContainer>
+      <h1>Todos os todos</h1>
+      <main>
+        {todos &&
+          users &&
+          todos.map((todo) => (
+            <TodoCard key={todo.id} completed={todo.completed}>
+              <span>
+                <strong>Título:</strong> {todo.title}
+              </span>
+              <span>
+                <strong>Responsável:</strong> {users[todo.userId].name}
+              </span>
+            </TodoCard>
+          ))}
+      </main>
+    </TodosContainer>
   );
 };
 
